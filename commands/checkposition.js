@@ -35,7 +35,7 @@ module.exports = {
       let position = await getUserPosition();
       let info = await getUserInfo();
       if (position.data.otherPositionRetList == null || position.data.otherPositionRetList.length == 0) { 
-        interaction.reply({
+        interaction.editReply({
           content: `No Position Found For ${info.data.nickName}!`,
         });
       } else {
@@ -76,7 +76,7 @@ module.exports = {
           .setTitle("Binance Leaderboard")
           .setTimestamp();
 
-        interaction.reply({ embeds: [leaderboardEmbed] });
+        interaction.editReply({ embeds: [leaderboardEmbed] });
       }
     }
 
